@@ -45,14 +45,14 @@ var work = {
      "title": "Web Developer", 
      "location": "Rio de Janeiro", 
      "dates": "March 2008 - February 2016",
-     "description": "Responsible for the analysis and implementation of data extraction from any data repository / database in order to display to the user the content in a intuitive way."
+     "description": "<b>Responsible for the analysis and implementation of data extraction from any data repository / database in order to display to the user the content in a intuitive way:</b><br>- Management of all stages of the implementation process of the Babylon-Enterprise tool in the entire company. Acquisition of virtual machines, server configuration, client preparation and implementation / client distribution to 120,000 users;<br>- Weekly usage statistics with the Log Parser tool;<br>- Responsible of dozens of corporate glossaries, extracting data from any database, using an ETL tool, in order to display information content to end users in a quick and friendly way, using Front End;<br>- Content development, training end users and new spaces creations of collaboration tools such as MS SharePoint 2013, Wiki Confluence, JIRA, JForum, Blog Apache Roller and IBM Quickr;<br>- Preparation of manuals and FAQs for the Babylon-Enterprise and collaboration tools, and fourth-level support for these tools."
 	},
 	{
 	 "employer": "Norskan Offshore", 
      "title": "Intern", 
      "location": "Rio de Janeiro", 
      "dates": "January 2006 - July 2007",
-     "description": "database in order to display to the user the content in a intuitive way."
+     "description": "<b>Leading provider of support vessels and subsea services to the Brazilian Market</b><br>- Programming using SQL and Delphi language;<br>- Desktops/Notebook maintenance;<br>- Maintenance and configuration of computer networks;<br>- Provided technical support for internal clients."
 	}
 	]
 }
@@ -85,35 +85,43 @@ var education = {
     }],      
     "onlineCourses": 
     	   {
-           "title": "",
-           "school": "",
-           "dates": "",
-           "url": ""
+           "title": "Nanodegree Front-End Developer",
+           "school": "Udacity",
+           "dates": "December 2016 - current",
+           "url": "http://udacity.com"
     }       
 }
 
 education.display = function(){
 	for(school in education.schools) {
-	$("#education").append(HTMLschoolStart);
-	var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
-	var formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
-	$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
-	var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
-	$(".education-entry:last").append(formattedSchoolLocation);
-	var formattedSchoolMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
-	$(".education-entry:last").append(formattedSchoolMajor);
-	var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
-	$(".education-entry:last").append(formattedSchoolDates);
-	var formattedSchoolUrl = HTMLonlineURL.replace("%data%",education.schools[school].url);
-	$(".education-entry:last").append(formattedSchoolUrl);
+		$("#education").append(HTMLschoolStart);
+		var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
+		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+		$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+		$(".education-entry:last").append(formattedSchoolLocation);
+		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
+		$(".education-entry:last").append(formattedSchoolMajor);
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+		$(".education-entry:last").append(formattedSchoolDates);
+		var formattedSchoolUrl = HTMLonlineURL.replace("%data%",education.schools[school].url);
+		$(".education-entry:last").append(formattedSchoolUrl);
 	};
+	$(".education-entry:last").append(HTMLonlineClasses);
+	var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses.title);
+	var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses.school);
+	$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+	var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses.dates);
+	$(".education-entry:last").append(formattedOnlineDates);
+	var formattedOnlineUrl = HTMLonlineURL.replace("%data%",education.onlineCourses.url);
+	$(".education-entry:last").append(formattedOnlineUrl);
 }
 
 var projects = {
         "title": "Babylon Enterprise", 
         "dates": "2008 - 2016",
-        "description": "",
-        "images": ""
+        "description": "Management of all stages of the implementation process of the Babylon-Enterprise tool in the entire company. Acquisition of virtual machines, server configuration, client preparation and implementation / client distribution to 120,000 users",
+        "images": "images/babylon.png"
 }
 
 projects.display = function() {
