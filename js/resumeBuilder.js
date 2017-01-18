@@ -5,7 +5,7 @@ var bio = {
 	"welcomeMessage": "Career built in the area of Information Technology, with solid experience in Web Developer (Front End/Back End) and Database.", 
     "skills": ["JavaScript", "HTML5", "CSS3", "SQL"],
     "biopic": "images/eitan5x7.png",
-	"contacts": [
+	"contacts": 
 	{
 		"mobile": "+55-21-994872360",
 		"facebook": "facebook.com/epeles",
@@ -14,7 +14,6 @@ var bio = {
 		"skype": "epeles",
 		"location": "Rio de Janeiro"
 	}
-	]
 }
 
 bio.display = function() {
@@ -26,22 +25,17 @@ bio.display = function() {
 	$('#header').append(formattedImage);
 	var formattedMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 	$('#header').append(formattedMessage); 
-	
 	$('#header').append(HTMLskillsStart);
-
 	for(skill in bio.skills) {
 		var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill]);
 		$('#skills').append(formattedSkills);
 	}
-
-	for(contact in bio.contacts) {
-		var formattedMobile = HTMLmobile.replace("%data%",bio.contacts[contact].mobile);
-		var formattedEmail = HTMLemail.replace("%data%",bio.contacts[contact].email);
-		var formattedtwitter = HTMLtwitter.replace("%data%",bio.contacts[contact].twitter);
-		var formattedSkype = HTMLcontactGeneric.replace("%contact%","skype").replace("%data%",bio.contacts[contact].skype);
-		$('#topContacts').append(formattedMobile,formattedEmail,formattedSkype,formattedtwitter);
-		$('#footerContacts').append(formattedMobile,formattedEmail,formattedSkype,formattedtwitter);
-	}
+	var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+	var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
+	var formattedtwitter = HTMLtwitter.replace("%data%",bio.contacts.twitter);
+	var formattedSkype = HTMLcontactGeneric.replace("%contact%","skype").replace("%data%",bio.contacts.skype);
+	$('#topContacts').append(formattedMobile,formattedEmail,formattedSkype,formattedtwitter);
+	$('#footerContacts').append(formattedMobile,formattedEmail,formattedSkype,formattedtwitter);
 }
 
 var work = {
@@ -87,17 +81,15 @@ var education = {
            "degree": "Bachelor",
            "majors": "Computer Science",
            "dates": "February 2004 - December 2008",
-           "url": "estacio.br"
-    } 
-    ],      
-    "onlineCourses": [
+           "url": "http://estacio.br"
+    }],      
+    "onlineCourses": 
     	   {
            "title": "",
            "school": "",
            "dates": "",
            "url": ""
     }       
-    ]       
 }
 
 education.display = function(){
